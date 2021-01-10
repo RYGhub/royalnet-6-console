@@ -81,9 +81,9 @@ class ConsolePDA:
         """
         log.debug(f"Completing partial: {part!r}")
         if part.syntax:
-            command = part.complete(pattern=r"^!{name}\s+{syntax}$", names=names)
+            command = part.complete(pattern=r"^{name}\s+{syntax}$", names=names)
         else:
-            command = part.complete(pattern=r"^!{name}$", names=names)
+            command = part.complete(pattern=r"^{name}$", names=names)
         self.register_conversation(command)
         return command
 
