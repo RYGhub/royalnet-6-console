@@ -31,6 +31,8 @@ async def console_message(*,
     :param files: A :class:`list` of files to attach to the message.
     :return: The sent :class:`.engi.Message`.
     """
+    if files is None:
+        files = []
 
     if len(files) > 0:
         raise engi.exc.NotSupportedError("Console does not allow sending files.")
