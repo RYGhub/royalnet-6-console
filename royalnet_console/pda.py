@@ -110,6 +110,9 @@ class ConsolePDA:
         log.debug(f"Putting bullet {bullet!r} in dispenser {self.dispenser!r}...")
         await self.dispenser.put(bullet)
 
+        log.debug("Awaiting another loop cycle")
+        await asyncio.sleep(0)
+
 
 # Objects exported by this module
 __all__ = (
