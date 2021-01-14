@@ -1,7 +1,7 @@
-``royalnet_discordpy``
+``royalnet_console``
 ======================
 
-Welcome to the documentation of ``royalnet_discordpy``!
+Welcome to the documentation of ``royalnet_console``!
 
 
 Table of contents
@@ -16,7 +16,7 @@ Table of contents
 Useful links
 ------------
 
-* `royalnet_discordpy on GitHub <https://github.com/Steffo99/royalnet-discordpy>`_
+* `royalnet_console on GitHub <https://github.com/Steffo99/royalnet-console>`_
 
 
 Indices and tables
