@@ -32,7 +32,7 @@ class ConsolePDA:
         log.debug(f"Creating new magazine...")
         self.mag = magazine.ConsoleMagazine()
         """
-        The
+        The :class:`royalnet.engineer.magazine.Magazine` used by this PDA.
         """
 
         self.dispenser: t.Optional[engi.Dispenser] = None
