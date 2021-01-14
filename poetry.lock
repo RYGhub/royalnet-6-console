@@ -182,7 +182,7 @@ typing_extensions = ["typing-extensions (>=3.7.2)"]
 
 [[package]]
 name = "pygments"
-version = "2.7.3"
+version = "2.7.4"
 description = "Pygments is a syntax highlighting package written in Python."
 category = "dev"
 optional = false
@@ -259,8 +259,8 @@ urllib3 = ">=1.21.1,<1.27"
 
 [[package]]
 name = "royalnet"
-version = "6.0.0a37"
-description = "A multipurpose bot and web framework"
+version = "6.0.0a38"
+description = "A multipurpose bot framework"
 category = "main"
 optional = false
 python-versions = ">=3.8,<4.0"
@@ -438,8 +438,8 @@ socks = ["PySocks (>=1.5.6,<1.5.7 || >1.5.7,<2.0)"]
 
 [metadata]
 lock-version = "1.0"
-python-versions = "^3.9"
-content-hash = "b205a562d986cf6f37d26656d253e542a637727073f7d16e83ceb10029762d7e"
+python-versions = "^3.8"
+content-hash = "29619503370561a9b9d3ecc3ea765ce9d8849b91c0c93944c3de62d087c749ab"
 
 [metadata.files]
 alabaster = [
@@ -596,8 +596,8 @@ pydantic = [
     {file = "pydantic-1.7.3.tar.gz", hash = "sha256:213125b7e9e64713d16d988d10997dabc6a1f73f3991e1ff8e35ebb1409c7dc9"},
 ]
 pygments = [
-    {file = "Pygments-2.7.3-py3-none-any.whl", hash = "sha256:f275b6c0909e5dafd2d6269a656aa90fa58ebf4a74f8fcf9053195d226b24a08"},
-    {file = "Pygments-2.7.3.tar.gz", hash = "sha256:ccf3acacf3782cbed4a989426012f1c535c9a90d3a7fc3f16d231b9372d2b716"},
+    {file = "Pygments-2.7.4-py3-none-any.whl", hash = "sha256:bc9591213a8f0e0ca1a5e68a479b4887fdc3e75d0774e5c71c31920c427de435"},
+    {file = "Pygments-2.7.4.tar.gz", hash = "sha256:df49d09b498e83c1a73128295860250b0b7edd4c723a32e9bc0d295c7c2ec337"},
 ]
 pyparsing = [
     {file = "pyparsing-2.4.7-py2.py3-none-any.whl", hash = "sha256:ef9d7589ef3c200abe66653d3f1ab1033c3c419ae9b9bdb1240a85b024efc88b"},
@@ -620,8 +620,8 @@ requests = [
     {file = "requests-2.25.1.tar.gz", hash = "sha256:27973dd4a904a4f13b263a19c866c13b92a39ed1c964655f025f3f8d3d75b804"},
 ]
 royalnet = [
-    {file = "royalnet-6.0.0a37-py3-none-any.whl", hash = "sha256:a58a600ff0d6401554d6aebe0cc335b9f539c42c799b64c2848c6cd37b299809"},
-    {file = "royalnet-6.0.0a37.tar.gz", hash = "sha256:93fa1cd200d382a405f4d1be3d2435b338f794eb59e2da1ef865afa1e812c15b"},
+    {file = "royalnet-6.0.0a38-py3-none-any.whl", hash = "sha256:952c623eb56a10091a4cb4ec55439115300b422eda9f7cd467215b091584015f"},
+    {file = "royalnet-6.0.0a38.tar.gz", hash = "sha256:bf284e977064ff9b3f8fa6fd3919a9f5ca29f8bac2ec2f3fac07b646046d2c7f"},
 ]
 snowballstemmer = [
     {file = "snowballstemmer-2.0.0-py2.py3-none-any.whl", hash = "sha256:209f257d7533fdb3cb73bdbd24f436239ca3b2fa67d56f6ff88e86be08cc5ef0"},
