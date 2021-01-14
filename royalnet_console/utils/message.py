@@ -10,6 +10,7 @@ import royalnet.royaltyping as t
 # External imports
 import logging
 import royalnet.engineer as engi
+import click
 
 # Internal imports
 # from . import something
@@ -38,7 +39,7 @@ async def console_message(*,
         raise engi.exc.NotSupportedError("Console does not allow sending files.")
 
     log.debug("Sending message...")
-    print(text)
+    click.echo(text)
 
     log.debug("Creating bullet...")
     return mag.Message(_text=text)

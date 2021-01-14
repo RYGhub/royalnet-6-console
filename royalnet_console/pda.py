@@ -11,6 +11,7 @@ import royalnet.royaltyping as t
 import logging
 import asyncio
 import royalnet.engineer as engi
+import click
 
 # Internal imports
 from . import magazine
@@ -22,7 +23,7 @@ log = logging.getLogger(__name__)
 # Code
 class ConsolePDA:
     """
-    .. todo:: Document the :class:`.ConsolePDA` class.
+    A PDA which handles :mod:`royalnet` input and output using a terminal as source.
     """
 
     def __init__(self):
@@ -30,10 +31,13 @@ class ConsolePDA:
 
         log.debug(f"Creating new magazine...")
         self.mag = magazine.ConsoleMagazine()
+        """
+        The
+        """
 
         self.dispenser: t.Optional[engi.Dispenser] = None
         """
-        The dispenser for this PDA.
+        The :class:`royalnet.engineer.dispenser.Dispenser` of this PDA.
         """
 
         self.conversations: t.List[engi.Conversation] = []
@@ -42,9 +46,13 @@ class ConsolePDA:
         :class:`~royalnet.engineer.dispenser.Dispenser`.
         """
 
-    async def run(self):
+    async def run(self) -> t.NoReturn:
+        """
+        Run the main loop of the :class:`.ConsolePDA`.
+        """
+
         while True:
-            message = input()
+            message = click.prompt("", type=str, prompt_suffix=">>> ", show_default=False)
             log.debug(f"Received a new message: {message!r}")
 
             log.debug(f"Creating ConsoleMessage from: {message!r}")
@@ -73,11 +81,12 @@ class ConsolePDA:
 
     def register_partial(self, part: engi.PartialCommand, names: t.List[str]) -> engi.Command:
         """
-        Register a new :class:`PartialCommand` in the PDA, converting it to a :class:`Command` in the process.
+        Register a new :class:`~royalnet.engineer.command.PartialCommand` in the PDA, converting it to a
+        :class:`royalnet.engineer.Command` in the process.
 
-        :param part: The :class:`PartialCommand` to register.
-        :param names: The :attr:`~royalnet.engineer.Command.names` to register the command as.
-        :return: The resulting :class:`Command`.
+        :param part: The :class:`~royalnet.engineer.command.PartialCommand` to register.
+        :param names: The :attr:`~royalnet.engineer.command.Command.names` to register the command with.
+        :return: The resulting :class:`~royalnet.engineer.command.Command`.
         """
         log.debug(f"Completing partial: {part!r}")
         if part.syntax:
@@ -110,7 +119,7 @@ class ConsolePDA:
         log.debug(f"Putting bullet {bullet!r} in dispenser {self.dispenser!r}...")
         await self.dispenser.put(bullet)
 
-        log.debug("Awaiting another loop cycle")
+        log.debug("Awaiting another event loop cycle...")
         await asyncio.sleep(0)
 
 

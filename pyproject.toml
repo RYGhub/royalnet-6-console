@@ -9,6 +9,8 @@ license = "AGPL-3.0-or-later"
 python = "^3.9"
 royalnet = "^6.0.0a37"
 psutil = "^5.8.0"
+click = "^7.1.2"
+colorama = "^0.4.4"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.1.1"
