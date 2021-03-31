@@ -15,6 +15,7 @@ import getpass
 import psutil
 import royalnet.engineer as engi
 import click
+import async_property as ap
 
 # Special global objects
 log = logging.getLogger(__name__)
@@ -48,22 +49,23 @@ class ConsoleUser(engi.User):
     def __hash__(self) -> int:
         return os.getuid()
 
+    @ap.async_property
     async def name(self) -> str:
         return getpass.getuser()
 
-    async def send_message(self, *,
-                           text: str = None,
-                           files: t.List[t.BinaryIO] = None) -> engi.Message:
-        return await console_message(text=text, files=files)
+    async def slide(self) -> "engi.Channel":
+        return ConsoleChannel()
 
 
 class ConsoleChannel(engi.Channel):
     def __hash__(self) -> int:
         return os.getpid()
 
+    @ap.async_property
     async def name(self) -> str:
         return psutil.Process(os.getpid()).name()
 
+    @ap.async_property
     async def users(self) -> t.List[engi.User]:
         return [ConsoleUser()]
 
@@ -86,18 +88,21 @@ class ConsoleMessage(engi.Message):
     def __hash__(self) -> int:
         return self._instance_number
 
+    @ap.async_property
     async def text(self) -> str:
         return self._text
 
+    @ap.async_property
     async def timestamp(self) -> datetime.datetime:
         return self._timestamp
 
+    @ap.async_property
     async def channel(self) -> engi.Channel:
         return ConsoleChannel()
 
-    async def send_reply(self, *,
-                         text: str = None,
-                         files: t.List[t.BinaryIO] = None) -> engi.Message:
+    async def reply(self, *,
+                    text: str = None,
+                    files: t.List[t.BinaryIO] = None) -> engi.Message:
         return await console_message(text=text, files=files)
 
 
@@ -113,6 +118,7 @@ class ConsoleMessageReceived(engi.MessageReceived):
     def __hash__(self):
         return
 
+    @ap.async_property
     async def message(self) -> ConsoleMessage:
         return self._msg
 

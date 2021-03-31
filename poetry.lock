@@ -284,7 +284,7 @@ description = "A multipurpose bot framework"
 category = "main"
 optional = false
 python-versions = "^3.8"
-develop = true
+develop = false
 
 [package.dependencies]
 async-property = "^0.2.1"
@@ -483,7 +483,7 @@ brotli = ["brotlipy (>=0.6.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "43ee92bfde25cfaf2a425e3369da281a5cc1288dd5b4ccdac2fa0b1d230cf2e7"
+content-hash = "899653d0350658ba17c1f8bb15f6ef73874325558ba67a2e191590869a24b4db"
 
 [metadata.files]
 alabaster = [
