@@ -1,6 +1,6 @@
 import pytest
 from royalnet_console.pda import ConsolePDA
-from royalnet.engineer import PartialCommand, Sentry, Message
+import royalnet.engineer as engi
 
 
 def test_construction():
@@ -15,22 +15,19 @@ def pda():
 
 @pytest.fixture
 def command():
-    @PartialCommand.new(syntax="")
-    async def test(*, _sentry: Sentry, _msg: Message, **__):
-        """
-        Ah, non lo so io!
-        """
+    @engi.PartialCommand.new(syntax="")
+    async def test(*, _sentry: engi.Sentry, _msg: engi.Message, **__):
         await _msg.reply(text=r"test")
 
     return test
 
 
-def test_registration(pda: ConsolePDA, command: PartialCommand):
+def test_registration(pda: ConsolePDA, command: engi.PartialCommand):
     pda.register_partial(command, ["test"])
 
 
 @pytest.fixture
-def pda_with_command(pda: ConsolePDA, command: PartialCommand):
+def pda_with_command(pda: ConsolePDA, command: engi.PartialCommand):
     pda.register_partial(command, ["test"])
     return pda
 
