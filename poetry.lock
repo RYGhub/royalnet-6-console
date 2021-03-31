@@ -279,22 +279,17 @@ socks = ["PySocks (>=1.5.6,!=1.5.7)", "win-inet-pton"]
 
 [[package]]
 name = "royalnet"
-version = "6.1.0"
+version = "6.1.2"
 description = "A multipurpose bot framework"
 category = "main"
 optional = false
-python-versions = "^3.8"
-develop = false
+python-versions = ">=3.8,<4.0"
 
 [package.dependencies]
-async-property = "^0.2.1"
-pydantic = "^1.7.3"
-sqlalchemy = "^1.4.0b3"
-toml = "^0.10.1"
-
-[package.source]
-type = "directory"
-url = "../royalnet"
+async-property = ">=0.2.1,<0.3.0"
+pydantic = ">=1.8.1,<2.0.0"
+sqlalchemy = ">=1.4.4,<2.0.0"
+toml = ">=0.10.1,<0.11.0"
 
 [[package]]
 name = "snowballstemmer"
@@ -483,7 +478,7 @@ brotli = ["brotlipy (>=0.6.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "899653d0350658ba17c1f8bb15f6ef73874325558ba67a2e191590869a24b4db"
+content-hash = "489f33ca347cef611892ef9d1a26d00f3e96006d8f11c5bf45927631c97a8a6a"
 
 [metadata.files]
 alabaster = [
@@ -731,7 +726,10 @@ requests = [
     {file = "requests-2.25.1-py2.py3-none-any.whl", hash = "sha256:c210084e36a42ae6b9219e00e48287def368a26d03a048ddad7bfee44f75871e"},
     {file = "requests-2.25.1.tar.gz", hash = "sha256:27973dd4a904a4f13b263a19c866c13b92a39ed1c964655f025f3f8d3d75b804"},
 ]
-royalnet = []
+royalnet = [
+    {file = "royalnet-6.1.2-py3-none-any.whl", hash = "sha256:d820e123714488066806834a7e6381279db719c275546f653f3335ecb42e3f69"},
+    {file = "royalnet-6.1.2.tar.gz", hash = "sha256:e1f45a8a66c63d9a61d42b14a15b6681f99580314199c52206d3e03f80853855"},
+]
 snowballstemmer = [
     {file = "snowballstemmer-2.1.0-py2.py3-none-any.whl", hash = "sha256:b51b447bea85f9968c13b650126a888aabd4cb4463fca868ec596826325dedc2"},
     {file = "snowballstemmer-2.1.0.tar.gz", hash = "sha256:e997baa4f2e9139951b6f4c631bad912dfd3c792467e2f03d7239464af90e914"},
