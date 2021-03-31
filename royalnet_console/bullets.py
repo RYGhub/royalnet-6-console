@@ -1,6 +1,6 @@
 # Module docstring
 """
-:class:`royalnet.engineer.bullet.Bullet`\\ s for the :mod:`royalnet_console` frontend.
+:class:`royalnet.engineer.proj.Bullet`\\ s for the :mod:`royalnet_console` frontend.
 """
 
 # Special imports
@@ -14,19 +14,37 @@ import os
 import getpass
 import psutil
 import royalnet.engineer as engi
-
-# Internal imports
-from .utils.message import console_message
+import click
 
 # Special global objects
 log = logging.getLogger(__name__)
 
 
 # Code
-class ConsoleUser(engi.User):
-    def __init__(self, mag: engi.Magazine):
-        super().__init__(mag)
+async def console_message(*,
+                          text: str = None,
+                          files: t.List[t.BinaryIO] = None) -> engi.Message:
+    """
+    Output a message to the console and return the resulting proj.
 
+    :param text: The text of the message.
+    :param files: A :class:`list` of files to attach to the message.
+    :return: The sent :class:`.engi.Message`.
+    """
+    if files is None:
+        files = []
+
+    if len(files) > 0:
+        raise engi.NotSupportedError("Console does not allow sending files.")
+
+    log.debug("Sending message...")
+    click.echo(text)
+
+    log.debug("Creating proj...")
+    return ConsoleMessage(_text=text)
+
+
+class ConsoleUser(engi.User):
     def __hash__(self) -> int:
         return os.getuid()
 
@@ -36,13 +54,10 @@ class ConsoleUser(engi.User):
     async def send_message(self, *,
                            text: str = None,
                            files: t.List[t.BinaryIO] = None) -> engi.Message:
-        return await console_message(mag=self.mag, text=text, files=files)
+        return await console_message(text=text, files=files)
 
 
 class ConsoleChannel(engi.Channel):
-    def __init__(self, mag: engi.Magazine):
-        super().__init__(mag)
-
     def __hash__(self) -> int:
         return os.getpid()
 
@@ -50,19 +65,19 @@ class ConsoleChannel(engi.Channel):
         return psutil.Process(os.getpid()).name()
 
     async def users(self) -> t.List[engi.User]:
-        return [self.mag.User()]
+        return [ConsoleUser()]
 
     async def send_message(self, *,
                            text: str = None,
                            files: t.List[t.BinaryIO] = None) -> engi.Message:
-        return await console_message(mag=self.mag, text=text, files=files)
+        return await console_message(text=text, files=files)
 
 
 class ConsoleMessage(engi.Message):
     _instance_count: int = 0
 
-    def __init__(self, mag: engi.Magazine, _text: str, _timestamp: datetime.datetime = None):
-        super().__init__(mag)
+    def __init__(self, _text: str, _timestamp: datetime.datetime = None):
+        super().__init__()
         self._text: str = _text
         self._timestamp: datetime.datetime = _timestamp or datetime.datetime.now()
         self._instance_number: int = self._instance_count
@@ -78,12 +93,28 @@ class ConsoleMessage(engi.Message):
         return self._timestamp
 
     async def channel(self) -> engi.Channel:
-        return self.mag.Channel()
+        return ConsoleChannel()
 
     async def send_reply(self, *,
                          text: str = None,
                          files: t.List[t.BinaryIO] = None) -> engi.Message:
-        return await console_message(mag=self.mag, text=text, files=files)
+        return await console_message(text=text, files=files)
+
+
+class ConsoleMessageReceived(engi.MessageReceived):
+    _instance_count: int = 0
+
+    def __init__(self, _text: str, _timestamp: datetime.datetime = None):
+        super().__init__()
+        self._msg: ConsoleMessage = ConsoleMessage(_text=_text, _timestamp=_timestamp)
+        self._instance_number: int = self._instance_count
+        self._instance_count += 1
+
+    def __hash__(self):
+        return
+
+    async def message(self) -> ConsoleMessage:
+        return self._msg
 
 
 # Objects exported by this module
@@ -91,4 +122,5 @@ __all__ = (
     "ConsoleUser",
     "ConsoleChannel",
     "ConsoleMessage",
+    "ConsoleMessageReceived",
 )

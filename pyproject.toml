@@ -19,7 +19,7 @@ classifiers = [
 
 [tool.poetry.dependencies]
 python = "^3.8"
-royalnet = "^6.0.0a38"
+royalnet = {path = "../royalnet"}
 psutil = "^5.8.0"
 click = "^7.1.2"
 colorama = "^0.4.4"
