@@ -6,7 +6,7 @@ from __future__ import annotations
 import royalnet.royaltyping as t
 
 import logging
-import asyncio
+import math
 import royalnet.engineer as engi
 import click
 import datetime
@@ -27,13 +27,13 @@ class ConsolePDAImplementation(engi.ConversationListImplementation):
     def namespace(self):
         return "console"
 
-    async def run(self, cycles: t.Union[bool, int] = True) -> t.NoReturn:
+    async def run(self, cycles: int = math.inf) -> t.NoReturn:
         """
         Run the main loop of the :class:`.ConsolePDA` for ``cycles`` cycles, or unlimited cycles if the parameter is
         :data:`True`.
         """
 
-        while cycles:
+        while cycles > 0:
             message = click.prompt("", type=str, prompt_suffix=">>> ", show_default=False)
             log.debug(f"Received a new input: {message!r}")
 
