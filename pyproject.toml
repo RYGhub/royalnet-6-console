@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "royalnet-console"
-version = "1.0.0"
+version = "2.0.0"
 description = "A terminal-based frontend for the royalnet.engineer module."
 authors = ["Stefano Pigozzi <me@steffo.eu>"]
 license = "AGPL-3.0-or-later"
@@ -19,7 +19,7 @@ classifiers = [
 
 [tool.poetry.dependencies]
 python = "^3.8"
-royalnet = "^6.1.4"
+royalnet = "~6.2.0"
 psutil = "^5.8.0"
 click = "^7.1.2"
 colorama = "^0.4.4"
