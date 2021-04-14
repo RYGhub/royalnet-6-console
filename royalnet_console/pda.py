@@ -46,6 +46,14 @@ class ConsolePDAImplementation(engi.ConversationListImplementation):
             if isinstance(cycles, int):
                 cycles -= 1
 
+    async def _handle_conversation_exc(
+            self,
+            dispenser: engi.Dispenser,
+            conv: engi.ConversationProtocol,
+            exception: Exception,
+    ) -> None:
+        self.log.error(f"ERROR: {exception}")
+
 
 __all__ = (
     "ConsolePDAImplementation",

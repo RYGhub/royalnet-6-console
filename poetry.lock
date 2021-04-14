@@ -279,7 +279,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7)", "win-inet-pton"]
 
 [[package]]
 name = "royalnet"
-version = "6.2.1"
+version = "6.3.0"
 description = "A multipurpose bot framework"
 category = "main"
 optional = false
@@ -479,7 +479,7 @@ brotli = ["brotlipy (>=0.6.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "dd03dba3d8cafa05d423d919e0dbda54ac96dddab43573811d49929b468f5d1a"
+content-hash = "b9acdca9d1875f1be11616d4e534d383646f484e92732ee78be19d84077a7888"
 
 [metadata.files]
 alabaster = [
@@ -728,8 +728,8 @@ requests = [
     {file = "requests-2.25.1.tar.gz", hash = "sha256:27973dd4a904a4f13b263a19c866c13b92a39ed1c964655f025f3f8d3d75b804"},
 ]
 royalnet = [
-    {file = "royalnet-6.2.1-py3-none-any.whl", hash = "sha256:e5b333fda9e5b0cf34537903e76ce9ffc3ca231df6c6ba28a9b1f9ee94efc843"},
-    {file = "royalnet-6.2.1.tar.gz", hash = "sha256:a41bb353840f4b0c4f8fb40d0852d1da9f284af0f525c90f9bfb77d26ccd2c53"},
+    {file = "royalnet-6.3.0-py3-none-any.whl", hash = "sha256:f2f6ea15def33e27ca92a0ba3b7863fab7b7339bcbb99bc83f6be74bd8e805e6"},
+    {file = "royalnet-6.3.0.tar.gz", hash = "sha256:6301ef60a1402ec59e55a206462f5b7296c5f6bbd6ab0bf38851ede42add5b20"},
 ]
 snowballstemmer = [
     {file = "snowballstemmer-2.1.0-py2.py3-none-any.whl", hash = "sha256:b51b447bea85f9968c13b650126a888aabd4cb4463fca868ec596826325dedc2"},
