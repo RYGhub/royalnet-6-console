@@ -1,6 +1,6 @@
 # `royalnet_console`
 
-A terminal-based frontend for the `royalnet.engineer` module.
+A Click-based PDA implementation for the `royalnet.engineer` module.
 
 The documentation is [hosted on Read The Docs](https://royalnet-console.readthedocs.io/en/latest/).
 
