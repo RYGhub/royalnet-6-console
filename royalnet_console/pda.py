@@ -17,12 +17,6 @@ log = logging.getLogger(__name__)
 
 
 class ConsolePDAImplementation(engi.ConversationListImplementation):
-    def _partialcommand_pattern(self, partial) -> str:
-        if partial.syntax:
-            return r"^{name}\s+{syntax}$"
-        else:
-            return r"^{name}$"
-
     @property
     def namespace(self):
         return "console"
@@ -41,18 +35,10 @@ class ConsolePDAImplementation(engi.ConversationListImplementation):
             projectile = bullets.ConsoleMessageReceived(_text=message, _timestamp=datetime.datetime.now())
 
             log.debug(f"Putting projectile: {projectile!r}")
-            await self.put_projectile(key="TERMINAL", projectile=projectile)
+            await self.put(key="TERMINAL", projectile=projectile)
 
             if isinstance(cycles, int):
                 cycles -= 1
-
-    async def _handle_conversation_exc(
-            self,
-            dispenser: engi.Dispenser,
-            conv: engi.ConversationProtocol,
-            exception: Exception,
-    ) -> None:
-        self.log.error(f"ERROR: {exception}")
 
 
 __all__ = (
