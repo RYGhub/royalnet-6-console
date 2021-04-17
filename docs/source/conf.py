@@ -69,8 +69,7 @@ html_static_path = ['_static']
 
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3.8", None),
-    "sqlalchemy": ("https://docs.sqlalchemy.org/en/13/", None),
-    "async_property": ("https://async-property.readthedocs.io/en/latest/", None),
+    "royalnet": ("https://royalnet-6.readthedocs.io/en/latest", None)
 }
 
 

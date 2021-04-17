@@ -1,13 +1,10 @@
-# Module docstring
 """
 :class:`royalnet.engineer.proj.Bullet`\\ s for the :mod:`royalnet_console` frontend.
 """
 
-# Special imports
 from __future__ import annotations
 import royalnet.royaltyping as t
 
-# External imports
 import logging
 import datetime
 import os
@@ -17,7 +14,6 @@ import royalnet.engineer as engi
 import click
 import async_property as ap
 
-# Special global objects
 log = logging.getLogger(__name__)
 
 
@@ -26,7 +22,7 @@ async def console_message(*,
                           text: str = None,
                           files: t.List[t.BinaryIO] = None) -> engi.Message:
     """
-    Output a message to the console and return the resulting proj.
+    Output text to the console and return the corresponding :class:`~.engi.Message`.
 
     :param text: The text of the message.
     :param files: A :class:`list` of files to attach to the message.
@@ -41,7 +37,7 @@ async def console_message(*,
     log.debug("Sending message...")
     click.echo(text)
 
-    log.debug("Creating proj...")
+    log.debug("Creating message...")
     return ConsoleMessage(_text=text)
 
 
@@ -123,7 +119,6 @@ class ConsoleMessageReceived(engi.MessageReceived):
         return self._msg
 
 
-# Objects exported by this module
 __all__ = (
     "ConsoleUser",
     "ConsoleChannel",

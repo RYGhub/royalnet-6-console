@@ -1,5 +1,5 @@
 """
-.. todo:: Document this.
+This module contains the :class:`.ConsolePDAImplementation`.
 """
 
 from __future__ import annotations
@@ -17,6 +17,11 @@ log = logging.getLogger(__name__)
 
 
 class ConsolePDAImplementation(engi.ConversationListImplementation):
+    """
+    A :class:`~.engi.ConversationListImplementation` which **blockingly** runs a small interactive chat in the command
+    line, and uses ``stdin`` e ``stdout`` to receive and send messages respectively.
+    """
+
     @property
     def namespace(self):
         return "console"

@@ -1,14 +1,14 @@
-Royalnet 6
-==========
+Royalnet Console
+================
 
-Welcome to the documentation of Royalnet 6!
+Welcome to the documentation of Royalnet Console!
 
 
 Table of contents
 -----------------
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
 
    autodoc/index
 
@@ -16,7 +16,8 @@ Table of contents
 Useful links
 ------------
 
-* `Royalnet on GitHub <https://github.com/Steffo99/royalnet-6>`_
+* `Royalnet Console on GitHub <https://github.com/Steffo99/royalnet-console>`_
+* `Documentation of Royalnet <https://royalnet-6.readthedocs.io/en/latest/>`_
 
 
 Indices and tables
