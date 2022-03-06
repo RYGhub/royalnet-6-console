@@ -3,13 +3,14 @@ This module contains the :class:`.ConsolePDAImplementation`.
 """
 
 from __future__ import annotations
-import royalnet.royaltyping as t
 
+import datetime
 import logging
 import math
-import royalnet.engineer as engi
+
 import click
-import datetime
+import royalnet.engineer as engi
+import royalnet.royaltyping as t
 
 from . import bullets
 
