@@ -279,7 +279,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7)", "win-inet-pton"]
 
 [[package]]
 name = "royalnet"
-version = "6.5.0"
+version = "6.6.0"
 description = "A multipurpose bot framework"
 category = "main"
 optional = false
@@ -500,7 +500,7 @@ attrs = [
 ]
 babel = [
     {file = "Babel-2.9.1-py2.py3-none-any.whl", hash = "sha256:ab49e12b91d937cd11f0b67cb259a57ab4ad2b59ac7a3b41d6c06c0ac5b0def9"},
-    {file = "Babel-2.9.1.tar.gz", hash = "sha256:bc0c176f9f6a994582230df350aa6e05ba2ebe4b3ac317eab29d9be5d2768da0"},
+    {file = "Babel-2.9.1.tar.gz", hash = "sha256:bc0c176f9f6a994582230df350aa6e05ba2ebe4b3ac317eab29d9be5d2768da0"}
 ]
 certifi = [
     {file = "certifi-2020.12.5-py2.py3-none-any.whl", hash = "sha256:719a74fb9e33b9bd44cc7f3a8d94bc35e4049deebe19ba7d8e108280cfd59830"},
@@ -728,8 +728,8 @@ requests = [
     {file = "requests-2.25.1.tar.gz", hash = "sha256:27973dd4a904a4f13b263a19c866c13b92a39ed1c964655f025f3f8d3d75b804"},
 ]
 royalnet = [
-    {file = "royalnet-6.5.0-py3-none-any.whl", hash = "sha256:1c1f0ddb4891d1951bd8fe2e9a4139cc5b3a039d9b2318c0cabd489dc2253ee3"},
-    {file = "royalnet-6.5.0.tar.gz", hash = "sha256:dc4e5a284e8e2f36f259b5fe88e36a5947984c78600fd22e695e62277c787951"},
+    {file = "royalnet-6.6.0-py3-none-any.whl", hash = "sha256:42bef7ff589dd0390263119a2b6ea8d90da8aad37ef57014f0477b9e0baf69cf"},
+    {file = "royalnet-6.6.0.tar.gz", hash = "sha256:133ed6785bb35ea57a40d41d5aecbf857f7b62460ed85b3ea273d9d2ddb83435"},
 ]
 snowballstemmer = [
     {file = "snowballstemmer-2.1.0-py2.py3-none-any.whl", hash = "sha256:b51b447bea85f9968c13b650126a888aabd4cb4463fca868ec596826325dedc2"},
