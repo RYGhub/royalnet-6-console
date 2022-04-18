@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "royalnet-console"
-version = "6.6.0"
+version = "6.6.2"
 description = "A terminal-based frontend for the royalnet.engineer module."
 authors = ["Stefano Pigozzi <me@steffo.eu>"]
 license = "AGPL-3.0-or-later"
